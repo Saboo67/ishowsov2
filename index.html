@@ -1,424 +1,201 @@
-
 <!DOCTYPE html>
 <html lang="th">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
+    <meta name="description" content="Portfolio ของนาย ธนาชาต สะบู่ นักเรียนสาย IT">
+    <title>Thanachart Saboo | My Portfolio</title>
 
-body {
-    font-family: Arial, sans-serif;
-    background: #f4f7fc;
-    color: #26344a;
-    line-height: 1.7;
-}
-
-/* Navigation */
-nav {
-    background: #17243a;
-    color: white;
-    padding: 18px 8%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-.logo {
-    font-size: 23px;
-    font-weight: bold;
-    color: #38bdf8;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 25px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-nav a:hover {
-    color: #38bdf8;
-}
-
-/* Hero */
-.hero {
-    min-height: 450px;
-    background: linear-gradient(135deg, #17243a, #263f61);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 60px 20px;
-}
-
-.hero h1 {
-    font-size: 42px;
-    margin-bottom: 10px;
-}
-
-.hero span {
-    color: #38bdf8;
-}
-
-.hero p {
-    font-size: 18px;
-    margin: 10px 0 25px;
-}
-
-.btn {
-    display: inline-block;
-    background: #3498db;
-    color: white;
-    padding: 12px 28px;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    background: #217dbb;
-    transform: translateY(-3px);
-}
-
-/* Main Container */
-.container {
-    max-width: 1100px;
-    margin: auto;
-    padding: 60px 25px;
-}
-
-section {
-    margin-bottom: 65px;
-}
-
-.section-title {
-    font-size: 28px;
-    margin-bottom: 25px;
-    border-left: 5px solid #3498db;
-    padding-left: 15px;
-}
-
-/* About */
-.about {
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-}
-
-/* Projects */
-.projects {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-}
-
-.project {
-    background: white;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    transition: 0.3s;
-}
-
-.project:hover {
-    transform: translateY(-5px);
-}
-
-.project h3 {
-    color: #247bb5;
-    margin-bottom: 10px;
-}
-
-.project .tag {
-    display: inline-block;
-    background: #e4f3ff;
-    color: #247bb5;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 13px;
-    margin-top: 12px;
-}
-
-/* Skills */
-.skills {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
-}
-
-.skill {
-    background: white;
-    padding: 22px;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    font-weight: bold;
-}
-
-.skill span {
-    display: block;
-    color: #3498db;
-    font-size: 25px;
-    margin-bottom: 8px;
-}
-
-/* Contact */
-.contact {
-    background: #17243a;
-    color: white;
-    text-align: center;
-    padding: 40px 20px;
-    border-radius: 12px;
-}
-
-.contact h2 {
-    margin-bottom: 15px;
-}
-
-.contact a {
-    color: #38bdf8;
-    text-decoration: none;
-}
-
-.contact .btn {
-    color: white;
-    margin-top: 20px;
-}
-
-/* Footer */
-footer {
-    background: #101b2d;
-    color: #cbd5e1;
-    text-align: center;
-    padding: 20px;
-}
-
-/* Mobile */
-@media (max-width: 700px) {
-    nav {
-        flex-direction: column;
-        gap: 12px;
-        padding: 15px;
-    }
-
-    nav ul {
-        gap: 13px;
-        flex-wrap: wrap;
-        justify-content: center;
-        font-size: 14px;
-    }
-
-    .hero h1 {
-        font-size: 30px;
-    }
-
-    .projects {
-        grid-template-columns: 1fr;
-    }
-
-    .skills {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .container {
-        padding: 40px 18px;
-    }
-}
-</style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- Navigation -->
-<nav>
-    <div class="logo">My Portfolio.</div>
+    <!-- Navigation -->
+    <nav>
+        <a href="#home" class="logo">Thanachart.</a>
 
-    <ul>
-        <li><a href="#about">เกี่ยวกับฉัน</a></li>
-        <li><a href="#projects">ผลงาน</a></li>
-        <li><a href="#skills">ทักษะ</a></li>
-        <li><a href="#contact">ติดต่อ</a></li>
-    </ul>
-</nav>
+        <ul>
+            <li><a href="#about">เกี่ยวกับฉัน</a></li>
+            <li><a href="#projects">ผลงาน</a></li>
+            <li><a href="#skills">ทักษะ</a></li>
+            <li><a href="#contact">ติดต่อ</a></li>
+        </ul>
+    </nav>
 
-<!-- Hero Section -->
-<header class="hero">
-    <h1>สวัสดีครับ ผมคือ <span>ธนาชาต สะบู่</span></h1>
+    <!-- Hero -->
+    <header class="hero" id="home">
+        <div class="hero-content">
+            <p class="welcome">WELCOME TO MY PORTFOLIO</p>
 
-    <p>
-        นักเรียนสาย IT ที่สนใจการเขียนโปรแกรม
-        และการพัฒนาเว็บไซต์
-    </p>
+            <h1>สวัสดีครับ ผมคือ</h1>
+            <h1 class="highlight">ธนาชาต สะบู่</h1>
 
-    <a href="#projects" class="btn">ดูผลงานของฉัน</a>
-</header>
+            <h3>IT Student | Web Developer</h3>
 
-<main class="container">
-
-    <!-- About Me -->
-    <section id="about">
-        <h2 class="section-title">เกี่ยวกับฉัน</h2>
-
-        <div class="about">
-            <p>
-                สวัสดีครับ ผมเป็นนักเรียนที่สนใจด้านเทคโนโลยี
-                สารสนเทศ การเขียนโปรแกรม และการพัฒนาเว็บไซต์
-                ผมชอบเรียนรู้เทคโนโลยีใหม่ ๆ
-                และฝึกฝนทักษะการเขียนโค้ดอยู่เสมอ
+            <p class="hero-description">
+                ผมสนใจการเขียนโปรแกรม การพัฒนาเว็บไซต์
+                และเทคโนโลยีใหม่ ๆ พร้อมเรียนรู้และพัฒนาตัวเองอยู่เสมอ
             </p>
 
-            <p style="margin-top:15px;">
-                เป้าหมายของผมคือการพัฒนาความสามารถ
-                ด้านการเขียนโปรแกรม และสร้างผลงาน
-                ที่สามารถนำไปใช้งานได้จริง
-            </p>
+            <a href="#projects" class="btn">ดูผลงานของฉัน</a>
         </div>
-    </section>
+    </header>
 
-    <!-- My Projects -->
-    <section id="projects">
-        <h2 class="section-title">ผลงานของฉัน</h2>
+    <main class="container">
 
-        <div class="projects">
+        <!-- About -->
+        <section id="about">
+            <h2 class="section-title">เกี่ยวกับฉัน</h2>
 
-            <div class="project">
-                <h3>01. Personal Portfolio</h3>
+            <div class="about">
+                <h3>นาย ธนาชาต สะบู่</h3>
+
                 <p>
-                    เว็บไซต์แนะนำตัวเอง
-                    สำหรับนำเสนอข้อมูลส่วนตัว
-                    ทักษะ และผลงานต่าง ๆ
+                    สวัสดีครับ ผมเป็นนักเรียนสายเทคโนโลยีสารสนเทศ (IT)
+                    มีความสนใจในการเขียนโปรแกรม การพัฒนาเว็บไซต์
+                    และการสร้างสรรค์ผลงานด้านเทคโนโลยี
                 </p>
-                <span class="tag">HTML / CSS</span>
-            </div>
 
-            <div class="project">
-                <h3>02. School Life RPG</h3>
                 <p>
-                    เกมแนว RPG ที่มีเนื้อหาเกี่ยวกับ
-                    ชีวิตในโรงเรียน พร้อมภารกิจ
-                    และความรู้เกี่ยวกับคอมพิวเตอร์
+                    ผมชอบเรียนรู้สิ่งใหม่ ๆ ทดลองใช้เครื่องมือทางเทคโนโลยี
+                    และฝึกฝนการเขียนโค้ด เพื่อพัฒนาความสามารถ
+                    และสร้างผลงานที่สามารถใช้งานได้จริง
                 </p>
-                <span class="tag">RPG Maker MZ</span>
             </div>
+        </section>
 
-            <div class="project">
-                <h3>03. Database Project</h3>
+        <!-- Projects -->
+        <section id="projects">
+            <h2 class="section-title">ผลงานของฉัน</h2>
+
+            <div class="projects">
+
+                <article class="project">
+                    <div class="project-icon">🌐</div>
+                    <h3>Personal Portfolio</h3>
+                    <p>
+                        เว็บไซต์แนะนำตัวเอง สำหรับนำเสนอประวัติ
+                        ทักษะ และผลงานด้านการพัฒนาเว็บไซต์
+                    </p>
+                    <span class="tag">HTML / CSS</span>
+                </article>
+
+                <article class="project">
+                    <div class="project-icon">🎮</div>
+                    <h3>School Life RPG</h3>
+                    <p>
+                        เกม RPG เกี่ยวกับชีวิตในโรงเรียน
+                        พร้อมภารกิจและบทเรียนความรู้ด้านคอมพิวเตอร์
+                    </p>
+                    <span class="tag">RPG Maker MZ</span>
+                </article>
+
+                <article class="project">
+                    <div class="project-icon">🗄️</div>
+                    <h3>Database Project</h3>
+                    <p>
+                        ฝึกออกแบบฐานข้อมูล สร้างตาราง
+                        จัดการข้อมูล และทดลองใช้งานคำสั่ง SQL
+                    </p>
+                    <span class="tag">SQL / Database</span>
+                </article>
+
+                <article class="project">
+                    <div class="project-icon">💻</div>
+                    <h3>Web Development</h3>
+                    <p>
+                        ฝึกสร้างเว็บไซต์และพัฒนาโครงสร้าง
+                        หน้าเว็บด้วยเทคโนโลยีด้านเว็บไซต์
+                    </p>
+                    <span class="tag">Web Development</span>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills">
+            <h2 class="section-title">ทักษะของฉัน</h2>
+
+            <div class="skills">
+
+                <div class="skill">
+                    <span>🌐</span>
+                    <h3>HTML</h3>
+                    <p>โครงสร้างเว็บไซต์</p>
+                </div>
+
+                <div class="skill">
+                    <span>🎨</span>
+                    <h3>CSS</h3>
+                    <p>ตกแต่งเว็บไซต์</p>
+                </div>
+
+                <div class="skill">
+                    <span>⚡</span>
+                    <h3>JavaScript</h3>
+                    <p>เพิ่มการทำงานให้เว็บไซต์</p>
+                </div>
+
+                <div class="skill">
+                    <span>🐍</span>
+                    <h3>Python</h3>
+                    <p>การเขียนโปรแกรม</p>
+                </div>
+
+                <div class="skill">
+                    <span>💻</span>
+                    <h3>Programming</h3>
+                    <p>พื้นฐานการเขียนโปรแกรม</p>
+                </div>
+
+                <div class="skill">
+                    <span>🔗</span>
+                    <h3>Git & GitHub</h3>
+                    <p>จัดการและเผยแพร่โปรเจกต์</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact">
+            <div class="contact">
+                <h2>ติดต่อฉัน</h2>
+
+                <p>นาย ธนาชาต สะบู่</p>
+
                 <p>
-                    ฝึกออกแบบฐานข้อมูล
-                    สร้างตาราง จัดการข้อมูล
-                    และทดลองคำสั่ง SQL
+                    Email:
+                    <a href="mailto:toeatitdoyouwant@gmail.com">
+                        toeatitdoyouwant@gmail.com
+                    </a>
                 </p>
-                <span class="tag">SQL / Database</span>
-            </div>
 
-            <div class="project">
-                <h3>04. Web Development</h3>
                 <p>
-                    ฝึกสร้างเว็บไซต์และทดลอง
-                    พัฒนาหน้าเว็บด้วยภาษา
-                    สำหรับการพัฒนาเว็บไซต์
+                    GitHub:
+                    <a href="https://github.com/Saboo67"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        github.com/Saboo67
+                    </a>
                 </p>
-                <span class="tag">Web Development</span>
-            </div>
 
-        </div>
-    </section>
-
-    <!-- My Skills -->
-    <section id="skills">
-        <h2 class="section-title">ทักษะของฉัน</h2>
-
-        <div class="skills">
-            <div class="skill">
-                <span>🌐</span>
-                HTML
-            </div>
-
-            <div class="skill">
-                <span>🎨</span>
-                CSS
-            </div>
-
-            <div class="skill">
-                <span>⚡</span>
-                JavaScript
-            </div>
-
-            <div class="skill">
-                <span>🐍</span>
-                Python
-            </div>
-
-            <div class="skill">
-                <span>💻</span>
-                Programming
-            </div>
-
-            <div class="skill">
-                <span>🔗</span>
-                Git & GitHub
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact">
-        <div class="contact">
-            <h2>ติดต่อฉัน</h2>
-
-            <p>
-                หากสนใจผลงานหรืออยากติดต่อ
-                สามารถติดต่อได้ผ่านช่องทางด้านล่าง
-            </p>
-
-            <p style="margin-top:15px;">
-                Email:
-                <a href="mailto:toeatitdoyouwant@gmail.com">
-                    toeatitdoyouwant@gmail.com
+                <a href="mailto:toeatitdoyouwant@gmail.com"
+                   class="btn">
+                    ส่งอีเมลถึงฉัน
                 </a>
-            </p>
+            </div>
+        </section>
 
-            <p>
-                GitHub:
-                <a href="https://github.com/Saboo67"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                    My GitHub Profile
-                </a>
-            </p>
+    </main>
 
-            <a href="mailto:toeatitdoyouwant@gmail.com"
-               class="btn">
-                ส่งอีเมลถึงฉัน
-            </a>
-        </div>
-    </section>
-
-</main>
-
-<!-- Footer -->
-<footer>
-    <p>© 2026 My Portfolio | Created by Me</p>
-</footer>
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Thanachart Saboo | My Portfolio</p>
+    </footer>
 
 </body>
 </html>
